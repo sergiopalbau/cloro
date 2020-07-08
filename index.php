@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Control de cloro</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+	<link rel="stylesheet" href="css/picnic.min.css">
 </head>
 <body>
 	<div class="flex demo center two">
@@ -52,17 +52,13 @@
 			<button  id="btn" name="btn">Registrar</button>					
 		</div>
 		
-		<script
-			  src="https://code.jquery.com/jquery-3.5.1.min.js"
-			  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-			  crossorigin="anonymous"></script>
+		<script src="js/jquery-3.5.1.min.js"></script>
 
 		<script>
 			$(document).ready(function(){
 				//$("#btn").click();	
 
 				$("#operacion").blur(function (){
-					alert("sin foco");
 					let seleccion = ("#operacion").val();
 					console.log(seleccion);
 				/*	if ((seleccion)>=3) {
@@ -76,7 +72,7 @@
 
 			function valida () {
 				let deposito= $("#deposito").val();
-				let accion= $("#accion").val();	
+				let accion= $("#operacion").val();	
 				if (deposito < 1) alert ("Elige un deposito");
 
 
