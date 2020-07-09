@@ -16,7 +16,7 @@
 				<br>
 				<label for="">Depósito</label>
 				<select name="deposito" id="deposito" required="">
-					<option value="">Elija un Depósito ... </option>
+					<option disabled selected="">Elija un Depósito ... </option>
 					<option value="1">Trobajo</option>
 					<option value="2">San Andres</option>
 					<option value="3">Villabalter</option>
@@ -26,63 +26,39 @@
 				<br><br>
 				<label for="">Operación</label>
 				<select name="operacion" id="operacion" required="">
-					<option value="">Elija una Operación...</option>
+					<option disabled selected="">Elija una Operación...</option>
 					<option value="1">Lectura</option>
 					<option value="2">Llenado</option>
 					<option value="3">Salida</option>
 					<option value="4">Entrada</option>
 				</select>
 				<br><br>
-				<label for="">Litros</label>
-				<input type="number"name="litros" id="litros" min="0" title ="Solo valores positivos">
+				<label for="">Litros en el bidón</label>
+				<input type="number" name="litros" id="litros" min="0" required >
 				<br><br>
-				<label for="">Garrafas</label>
-				<input type="number" id="garrafas" name="garrafas" min="0" title ="Solo valores positivos">
+				<label for="">Garrafas en stock</label>
+				<input type="number" id="garrafas" name="garrafas" min="0" required>
 				<br><br>
-				<label for="">Movimiento garrafas</label>
-				<input type="number" id="movimiento" name="movimiento" disabled="">
+				<label for="">Movimiento garrafas (solo Entrada/Salida)</label>
+				<input type="number" id="movimiento" name="movimiento" disabled="" placeholder="Inhabilitado">
 				<br><br>
 
-				
+				<button  id="btn" name="btn" value="enviar">Registrar</button>	
 
 			</form>
 			
 		</div>
 		<div class="flex two center">
-			<button  id="btn" name="btn">Registrar</button>					
+							
 		</div>
 		
 		<script src="js/jquery-3.5.1.min.js"></script>
 
-		<script>
-			$(document).ready(function(){
-				//$("#btn").click();	
+		<script src="js/script.js"></script>
 
-				$("#operacion").blur(function (){
-					let seleccion = ("#operacion").val();
-					console.log(seleccion);
-				/*	if ((seleccion)>=3) {
-						$("#movimiento").removeattr("disabled");
-						alert ("quitado");
-					}
-				*/
-				});
-
-			 });
-
-			function valida () {
-				let deposito= $("#deposito").val();
-				let accion= $("#operacion").val();	
-				if (deposito < 1) alert ("Elige un deposito");
-
-
-			}
-
-			function activa() {
-				alert ("activando");
-			}
 
 		</script>
 		
 </body>
 </html>
+
