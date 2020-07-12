@@ -1,64 +1,48 @@
+<?php
+session_start();
+if( isset($_SESSION['msg'])){
+	$var = $_SESSION['msg'];
+}else{
+	$var = "";
+}
+
+/*
+if (isset($_SESSION['msg']) || empty($_SESSION['msg'])){
+	echo $_SESSION['msg'];
+}*/
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Control de cloro</title>
-	<link rel="stylesheet" href="css/picnic.min.css">
+	<title>304SAR</title>
+	<link rel="stylesheet" href="css/login.css">
 </head>
-<body>
-	<div class="flex demo center two">
-		<div></div>
-		<h1>Control de CLORO INSTALACIONES</h1>
-		<div></div>
-	</div>
-		<div class="flex center two">
-			<form action="control.php" method="POST">
-				<br>
-				<label for="">Depósito</label>
-				<select name="deposito" id="deposito" required="">
-					<option disabled selected="">Elija un Depósito ... </option>
-					<option value="1">Trobajo</option>
-					<option value="2">San Andres</option>
-					<option value="3">Villabalter</option>
-					<option value="4">Pinilla</option>
-					<option value="5">Ferral del Bernesga</option>
-				</select>
-				<br><br>
-				<label for="">Operación</label>
-				<select name="operacion" id="operacion" required="">
-					<option disabled selected="">Elija una Operación...</option>
-					<option value="1">Lectura</option>
-					<option value="2">Llenado</option>
-					<option value="3">Salida</option>
-					<option value="4">Entrada</option>
-				</select>
-				<br><br>
-				<label for="">Litros en el bidón</label>
-				<input type="number" name="litros" id="litros" min="0" required >
-				<br><br>
-				<label for="">Garrafas en stock</label>
-				<input type="number" id="garrafas" name="garrafas" min="0" required>
-				<br><br>
-				<label for="">Movimiento garrafas (solo Entrada/Salida)</label>
-				<input type="number" id="movimiento" name="movimiento" disabled="" placeholder="Inhabilitado">
-				<br><br>
 
-				<button  id="btn" name="btn" value="enviar">Registrar</button>	
-
-			</form>
-			
-		</div>
-		<div class="flex two center">
-							
-		</div>
-		
-		<script src="js/jquery-3.5.1.min.js"></script>
-
-		<script src="js/script.js"></script>
-
-
-		</script>
-		
-</body>
 </html>
+<body>
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
 
+			<div class="login-form">
+				<form action="logon.php" method="POST">
+					<div class="control-group">
+						<input type="text" class="login-field"  placeholder="usuario" id="login-name" name="usuario" required="true">
+					</div>
+
+					<div class="control-group">
+						<input type="password" class="login-field" value="" placeholder="pwd" id="login-pass" name="pwd" required="true">					
+					</div>
+
+					<input name="enviar" class="btn"  type="submit">
+					<br>
+					<label for="" style="color:red"> <?php echo $var?> </label>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</body>
