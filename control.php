@@ -18,7 +18,14 @@ if ($_POST){
 	$l = trim($_POST['litros']);
 	$g = trim($_POST['garrafas']);
 
-	$sql = "INSERT INTO control (id_control, id_dp, id_operacion, litros, garrafas, date) VALUES (NULL, $dp, $op, $l, $g, CURRENT_TIMESTAMP);";
+	if (isset($_POST['movimiento'])){
+
+		$m = trim($_POST['movimiento']);
+	}else{
+		$m = 0;
+	}
+
+	$sql = "INSERT INTO control (id_control, id_dp, id_operacion, litros, garrafas, movimiento, date) VALUES (NULL, $dp, $op, $l, $g, $m, CURRENT_TIMESTAMP);";
 
 
 	$db = new db();
